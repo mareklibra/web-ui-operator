@@ -172,6 +172,7 @@ func generateInventory(instance *kubevirtv1alpha1.KWebUI, namespace string, acti
 	}
 	defer f.Close()
 
+	// TODO: pass values either from instance.Spec or Environment variables (see components.go) or the defaults
 	f.WriteString("[OSEv3:children]\nmasters\n\n")
 	f.WriteString("[OSEv3:vars]\n")
 	f.WriteString("platform=openshift\n")
